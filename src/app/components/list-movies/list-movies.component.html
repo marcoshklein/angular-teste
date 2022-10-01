@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="titulo-card">List movies</div>
+  <table class="table table-sm table-striped table-bordered">
+    <thead class="table-secondary">
+      <tr class="font-weight-bold">
+        <td>ID</td>
+        <td>
+          Year
+          <input
+            class="form-control"
+            [(ngModel)]="year"
+            type="number"
+            placeholder="Search by year"
+            aria-label="Search by year"
+            (ngModelChange)="obterFilmes()"
+          />
+        </td>
+        <td>Title</td>
+        <td>
+          Winner
+          <div>
+            <select
+              class="form-select"
+              [(ngModel)]="winner"
+              (ngModelChange)="obterFilmes()"
+            >
+              <option value="">Yes / No</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elem of (dados$ | async)?.content">
+        <td>{{ elem.id }}</td>
+        <td>{{ elem.year }}</td>
+        <td>{{ elem.title }}</td>
+        <td>{{ elem.winner }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <nav>
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="previous()">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link" (click)="next()">Next</a></li>
+    </ul>
+  </nav>
+</div>

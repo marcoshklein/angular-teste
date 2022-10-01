@@ -1,0 +1,27 @@
+.toolbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #222930;
+  color: white;
+  font-weight: 600;
+
+  .nome {
+    margin-left: 16px;
+    font-size: 24px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
+  background: #e3ecf1;
+  color: #fff;
+}
+

@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-body">
+    <div class="titulo-card">Top 3 studios with winners</div>
+    <table class="table table-sm table-striped table-bordered">
+      <thead class="table-secondary">
+        <tr class="font-weight-bold">
+          <td>Name</td>
+          <td>Win Count</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let elem of dados$ | async">
+          <td>{{ elem.name }}</td>
+          <td>{{ elem.winCount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

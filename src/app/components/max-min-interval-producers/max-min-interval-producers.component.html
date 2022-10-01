@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-body">
+    <div class="titulo-card">Producers with longest and shortest interval between wins</div>
+
+    <p class="subtitulo-card">Maximum</p>
+    <table class="table table-striped table-bordered">
+      <thead class="table-secondary">
+        <tr class="font-weight-bold">
+          <td>Producer</td>
+          <td>Interval</td>
+          <td>Previous Year</td>
+          <td>Following Year</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let elem of (dados$ | async)?.max">
+          <td>{{ elem.producer }}</td>
+          <td>{{ elem.interval }}</td>
+          <td>{{ elem.previousWin }}</td>
+          <td>{{ elem.followingWin }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="subtitulo-card">Minimum</p>
+    <table class="table table-sm table-striped table-bordered">
+      <thead class="table-secondary">
+        <tr class="font-weight-bold">
+          <td>Producer</td>
+          <td>Interval</td>
+          <td>Previous Year</td>
+          <td>Following Year</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let elem of (dados$ | async)?.min">
+          <td>{{ elem.producer }}</td>
+          <td>{{ elem.interval }}</td>
+          <td>{{ elem.previousWin }}</td>
+          <td>{{ elem.followingWin }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

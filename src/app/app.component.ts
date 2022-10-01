@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-teste';
+  linkAtivo = 'dashboard';
+
+  definirLinkAtivo(link: string) {
+    this.linkAtivo = link;
+  }
+
 }
