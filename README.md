@@ -1,10 +1,14 @@
 # AngularTeste
 
-Esse projeto foi realizado para um teste técnico
-Utilizado Angular 12
-Utilizado conceito de observables (rxjs), consumo de dados async para não precisar fazer unsubscribe no destroy
-Projeto possui complexidade simples/média
-A arquitetura utilizada foi pensando em componentização, separar elementos que possam ser reutilizados.
+ - Esse projeto foi realizado para um teste técnico
+
+ - Utilizado Angular 12
+
+ - Utilizado conceito de observables (rxjs), consumo de dados async para não precisar fazer unsubscribe no destroy
+
+ - Projeto possui complexidade simples/média
+
+ - A arquitetura utilizada foi pensando em componentização, separar elementos que possam ser reutilizados.
 
 ## Intalação
 
