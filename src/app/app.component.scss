@@ -4,15 +4,14 @@
   align-items: center;
   background-color: #222930;
   color: white;
-  font-weight: 600;
-
   .nome {
-    margin-left: 16px;
+    margin-left: 36px;
     font-size: 24px;
   }
 }
 
 .wrapper {
+  height: calc(100% - 60px);
   display: flex;
   align-items: stretch;
 }
@@ -20,8 +19,14 @@
 #sidebar {
   min-width: 250px;
   max-width: 250px;
-  min-height: 100vh;
   background: #e3ecf1;
   color: #fff;
 }
 
+#content {
+  width: calc(100% - 250px);
+}
+
+.textoInativo {
+  color: gray;
+}

@@ -5,20 +5,20 @@
 <div class="wrapper">
   <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-light">
     <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item" (click)="definirLinkAtivo('dashboard')">
+      <li class="nav-item">
         <a
           routerLink="/dashboard"
           class="nav-link"
-          [ngClass]="{ active: linkAtivo === 'dashboard' }"
+          [ngClass]="{ textoInativo: !router.url.includes('dashboard') }"
         >
           Dashboard
         </a>
       </li>
-      <li (click)="definirLinkAtivo('lista-filmes')">
+      <li>
         <a
           routerLink="/lista-filmes"
           class="nav-link"
-          [ngClass]="{ active: linkAtivo === 'lista-filmes' }"
+          [ngClass]="{ textoInativo: !router.url.includes('lista-filmes') }"
         >
           List
         </a>

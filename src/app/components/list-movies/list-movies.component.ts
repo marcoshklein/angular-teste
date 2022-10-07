@@ -12,8 +12,11 @@ import { tap } from 'rxjs/operators';
 export class ListMoviesComponent implements OnInit {
   year: number | undefined = undefined;
   winner: boolean | undefined = undefined;
-  page = 0;
+  page = 1;
   maxPage = 1;
+  totalItens: number;
+  itensPerPage = 15;
+  collection: any;
 
   dados$!: Observable<IMovies>;
   constructor(private filmesService: FilmesService) {}
@@ -23,11 +26,14 @@ export class ListMoviesComponent implements OnInit {
   }
 
   obterFilmes() {
-    const currentYear = new Date().getFullYear();
 
-    this.dados$ = this.filmesService
-      .getMovies(this.page, this.year, this.winner)
-      .pipe(tap((res) => (this.maxPage = res.totalPages)));
+    this.filmesService
+      .getMovies(this.page -1, this.year, this.winner)
+      .subscribe(res => {
+        console.log(res);
+        this.totalItens = res.totalElements;
+        this.collection = res;
+      });
   }
 
   previous() {
@@ -40,7 +46,21 @@ export class ListMoviesComponent implements OnInit {
   next() {
     if (this.page < this.maxPage - 1) {
       this.page++;
-      this.obterFilmes();
     }
+  }
+
+  pageChanged(e: any) {
+    console.log(e);
+    this.obterFilmes();
+  }
+
+  counter(): Array<number> {
+    let paginas = new Array();
+    for (let index = 1; index <= 5; index++) {
+      if (this.page + index < this.maxPage) {
+        paginas.push(this.page + index);
+      }
+    }
+    return paginas;
   }
 }

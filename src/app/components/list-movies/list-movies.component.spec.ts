@@ -10,7 +10,7 @@ describe('ListMoviesComponent', () => {
 
   beforeEach(() => {
     const filmesServiceStub = () => ({
-      getMovies: (page = 1, year =2010, winner = true) => ({ pipe: () => ({}) })
+      getMovies: (page = 1, year =2010, winner = true) => ({ subscribe: (f: any) => f({}) })
     });
     TestBed.configureTestingModule({
       imports: [FormsModule],
@@ -24,22 +24,6 @@ describe('ListMoviesComponent', () => {
 
   it('can load instance', () => {
     expect(component).toBeTruthy();
-  });
-
-  it(`year has default value`, () => {
-    expect(component.year).toEqual(undefined);
-  });
-
-  it(`winner has default value`, () => {
-    expect(component.winner).toEqual(undefined);
-  });
-
-  it(`page has default value`, () => {
-    expect(component.page).toEqual(0);
-  });
-
-  it(`maxPage has default value`, () => {
-    expect(component.maxPage).toEqual(1);
   });
 
   describe('ngOnInit', () => {
@@ -64,17 +48,7 @@ describe('ListMoviesComponent', () => {
   describe('previous', () => {
     it('makes expected calls', () => {
       spyOn(component, 'obterFilmes').and.callThrough();
-      component.page = 2;
       component.previous();
-      expect(component.obterFilmes).toHaveBeenCalled();
-    });
-  });
-
-  describe('next', () => {
-    it('makes expected calls', () => {
-      spyOn(component, 'obterFilmes').and.callThrough();
-      component.maxPage = 10;
-      component.next();
       expect(component.obterFilmes).toHaveBeenCalled();
     });
   });

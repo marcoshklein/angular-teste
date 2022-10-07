@@ -13,6 +13,7 @@ import { MaxMinIntervalProducersComponent } from './components/max-min-interval-
 import { ListWinnerComponent } from './components/list-winner/list-winner.component';
 import { FormsModule } from '@angular/forms';
 import { ListMoviesComponent } from './components/list-movies/list-movies.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { ListMoviesComponent } from './components/list-movies/list-movies.compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-
+    NgxPaginationModule,
     BrowserAnimationsModule,
     HttpClientModule,
   ],
