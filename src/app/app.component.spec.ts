@@ -25,7 +25,4 @@ describe('AppComponent', () => {
     expect(component.title).toEqual(`angular-teste`);
   });
 
-  it(`linkAtivo has default value`, () => {
-    expect(component.linkAtivo).toEqual(`dashboard`);
-  });
 });
